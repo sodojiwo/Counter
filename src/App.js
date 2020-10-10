@@ -32,29 +32,29 @@ class Header extends Component {
 
 class Counter extends Component {
   state = {
-    angka: 0
+    number: 0
   };
 
-  tambah = () => {
+  increment = () => {
     this.setState({
-      angka: this.state.angka + 1
+      number: this.state.number + 1
     });
   };
 
-  minus = () => {
-    if (this.state.angka == 0) {
+  decrement = () => {
+    if (this.state.number == 0) {
       return alert('Jangan Minus woy!');
     }
     this.setState({
-      angka: this.state.angka - 1
+      number: this.state.angka - 1
     });
   };
   render() {
     return (
       <div>
-        <h2 style={{}}>{this.state.angka}</h2>
-        <button onClick={this.tambah}>Tambah</button>
-        <button onClick={this.minus}>Kurang</button>
+        <h2 style={{}}>{this.state.number}</h2>
+        <button onClick={this.increment}>Incremen</button>
+        <button onClick={this.decrement}>Decrement</button>
       </div>
     );
   }
