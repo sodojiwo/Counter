@@ -6,12 +6,20 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header judul="Halo" isi="tahu" />
-        <Counter />
-        <Header judul="Hai" isi="tahu2" />
-        <Counter />
-        <Header judul="Hola" isi="tahu3" />
-        <Counter />
+        <CounterCard>
+          <Header judul="Counter One" isi="This is the first counter!" />
+          <Counter />        
+        </CounterCard>
+      
+        <CounterCard>
+          <Header judul="Counter Two" isi="This is the second counter!" />
+          <Counter />        
+        </CounterCard>
+      
+        <CounterCard>
+          <Header judul="Counter Three" isi="This is the third counter!" />
+          <Counter />        
+        </CounterCard>
       </div>
     );
   }
@@ -23,8 +31,18 @@ class Header extends Component {
   render() {
     return (
       <div>
-        <h1>{this.props.judul}</h1>
+        <h3>{this.props.judul}</h3>
         <p>{this.props.isi}</p>
+      </div>
+    );
+  }
+}
+
+class CounterCard extends Component {
+  render() {
+    return (
+      <div style={{padding:"20px", background:"white", boxShadow:"0px 0px 15px rgba(0, 125, 197, 0.06)", borderRadius:"10px" }}>
+      {this.props.children}
       </div>
     );
   }
